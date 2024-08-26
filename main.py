@@ -47,9 +47,7 @@ class MAINSCRAPER:
      
         try:
             main_headlines = self.driver.find_elements(By.XPATH, xl.MAIN_HEADLINES)
-            if self.pages == 0:
-                accept_element = self.driver.find_element(By.XPATH,xl.ACCEPT_HANDLER).click()
-    
+            
             for main_headline  in main_headlines:
                 if main_headline:
                     name = name_pattern.search(main_headline.text)
@@ -107,7 +105,7 @@ class MAINSCRAPER:
 
  
 if __name__ == "__main__":
-    verge_scraper = MAINSCRAPER('https://www.theverge.com/')
+    verge_scraper = MAINSCRAPER('https://www.theverge.com')
 
     verge_scraper.get_main_headlines()
 
