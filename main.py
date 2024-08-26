@@ -31,7 +31,7 @@ class MAINSCRAPER:
         self.options.add_experimental_option('detach',True)
         self.options.add_argument('--headless')
         self.url = url
-        self.driver = webdriver.Chrome(service=service,options=self.options)
+        self.driver = webdriver.Chrome(service=self.service,options=self.options)
         self.driver.get(self.url)
         self.pages = 0
       
