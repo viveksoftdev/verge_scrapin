@@ -33,6 +33,7 @@ class MAINSCRAPER:
         
         self.url = url
         self.driver = webdriver.Chrome(service=self.service,options=self.options)
+        self.driver.implicitly_wait(10)
         self.driver.get(self.url)
         self.pages = 0
       
