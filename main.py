@@ -1,5 +1,7 @@
 #import By
 from selenium.webdriver.common.by  import By
+
+from webdriver_manager.chrome import ChromeDriverManager
 #import webdriver
 from selenium import webdriver
 #importing options
@@ -29,7 +31,7 @@ class MAINSCRAPER:
         self.options.add_experimental_option('detach',True)
         self.options.add_argument('--headless')
         self.url = url
-        self.driver = webdriver.Chrome(service=self.service,options=self.options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(),options=self.options)
         self.driver.get(self.url)
         self.pages = 0
       
@@ -103,7 +105,7 @@ class MAINSCRAPER:
 
  
 if __name__ == "__main__":
-    verge_scraper = MAINSCRAPER('https://www.theverge.com/',os.path.abspath('chromedriver.exe'))
+    verge_scraper = MAINSCRAPER('https://www.theverge.com/')
 
     verge_scraper.get_main_headlines()
 
