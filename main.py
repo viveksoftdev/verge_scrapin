@@ -103,7 +103,7 @@ class MAINSCRAPER:
 
  
 if __name__ == "__main__":
-    verge_scraper = MAINSCRAPER('https://www.theverge.com/',os.path.abspath('main_class\chromedriver.exe'))
+    verge_scraper = MAINSCRAPER('https://www.theverge.com/',os.path.abspath('chromedriver.exe'))
 
     verge_scraper.get_main_headlines()
 
