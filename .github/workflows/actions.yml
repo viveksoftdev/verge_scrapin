@@ -8,7 +8,7 @@ on:
     branches:
       - main  # Trigger workflow on pull request to the main branch
   schedule:
-    - cron: '*/5 * * * *'  # Optional: Run every 5 minutes
+    - cron: '* * * * * 1'  # Optional: Run every 5 minutes
 
 jobs:
   run-script:
