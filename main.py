@@ -29,7 +29,7 @@ class MAINSCRAPER:
         self.service = Service(executable_path=ChromeDriverManager().install())
         self.options = ChromeOptions()
         self.options.add_experimental_option('detach',True)
-        self.add_argument("--headless")
+        self.options.add_argument("--headless")
         
         self.url = url
         self.driver = webdriver.Chrome(service=self.service,options=self.options)
