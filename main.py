@@ -26,12 +26,12 @@ import re
 
 class MAINSCRAPER:
     def __init__(self,url):
-        
+        self.service = Service(executable_path=ChromeDriverManager().install())
         self.options = ChromeOptions()
         self.options.add_experimental_option('detach',True)
         self.options.add_argument('--headless')
         self.url = url
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(service=service,options=self.options)
         self.driver.get(self.url)
         self.pages = 0
       
