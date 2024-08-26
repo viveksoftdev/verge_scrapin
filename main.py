@@ -26,7 +26,7 @@ import re
 
 class MAINSCRAPER:
     def __init__(self,url):
-        self.service = Service(executable_path=driver_path)
+        
         self.options = ChromeOptions()
         self.options.add_experimental_option('detach',True)
         self.options.add_argument('--headless')
