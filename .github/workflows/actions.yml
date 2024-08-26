@@ -23,6 +23,14 @@ jobs:
         with:
           python-version: '3.11'  # Specify the Python version to use
 
+
+      - name: Upload output artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-file
+          path: file_name.csv  # Path to the file you want to upload
+
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
