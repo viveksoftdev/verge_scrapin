@@ -69,7 +69,7 @@ class MAINSCRAPER:
                         
                     self.pages = 1    
             try:
-                csv_ = pandas.read_csv(os.path.abspath('verge_scrapin\\file_name.csv'))
+                csv_ = pandas.read_csv(os.path.abspath('file_name.csv'))
                 if csv_:
                     news_dataframe = pandas.DataFrame(main_news)
 
