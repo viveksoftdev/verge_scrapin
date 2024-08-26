@@ -69,13 +69,14 @@ class MAINSCRAPER:
                         
                     self.pages = 1    
             try:
-                csv_ = pandas.read_csv(os.path.abspath('file_name.csv'))
-                if csv_:
+                
+                if os.path.exists('file_name.csv'):
+                    csv_ = pandas.read_csv(os.path.abspath('file_name.csv'))
                     news_dataframe = pandas.DataFrame(main_news)
-
-                    csv_.concat(news_dataframe)
-                    csv_ = csv_.drop_duplicates(inplace=True)
-                    csv_.to_csv('file_name.csv')
+    
+                    combined = pandas.concat([csv_,news_dataframe])
+                    combined.drop_duplicates(inplace=True)
+                    combined.to_csv('file_name.csv')
 
             except Exception as error:
                 verge_logger.error(error)
