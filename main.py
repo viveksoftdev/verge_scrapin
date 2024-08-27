@@ -76,12 +76,12 @@ class MAINSCRAPER:
     
                     combined = pandas.concat([csv_,news_dataframe])
                     combined.drop_duplicates(inplace=True)
+                    verger_logger.debug('File write operation')
                     combined.to_csv('file_name.csv')
 
             except Exception as error:
                 verge_logger.error(error)
                 news_dataframe = pandas.DataFrame(main_news)
-                print(news_dataframe)
                 news_dataframe.to_csv('file_name.csv')
                 
         except NoSuchElementException as error:
